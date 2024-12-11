@@ -1,0 +1,195 @@
+.option-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 80%;
+  max-width: 600px;
+  padding: 1rem;
+  position: relative;
+  margin: 10px auto 0;
+  box-sizing: border-box;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #f6e4d0;
+  transition:
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+.option:hover {
+  background-color: #d0b595;
+  border-color: #1976d2;
+  transform: translateY(-5px) scale(1.05);
+  color: #b08938;
+}
+
+.selected {
+  background-color: #edbd38;
+  border-color: #1976d2;
+}
+
+.formTitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin: 0 auto 1rem;
+  letter-spacing: 0.5px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+  margin-left: 5px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  font-size: 13px;
+  font-weight: 300;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+  .tooltip {
+    display: flex;
+  }
+  .tooltiptext {
+    font-size: 12px;
+    padding: 8px;
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tooltip {
+    display: flex;
+  }
+  .tooltiptext {
+    font-size: 11px;
+    padding: 6px;
+    max-width: 90%;
+  }
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .option-container {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  .option {
+    font-size: 0.9rem;
+    height: 45px;
+  }
+
+  .formTitle {
+    font-size: 1.3rem;
+  }
+
+  .tooltiptext {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .option-container {
+    margin-top: 10px;
+  }
+
+  .option {
+    font-size: 0.85rem;
+    height: 40px;
+  }
+
+  .formTitle {
+    font-size: 1.2rem;
+  }
+
+  .tooltiptext {
+    font-size: 12px;
+  }
+}
+
+.option-within1week,
+.option-1-3months,
+.option-4-6months,
+.option-upTo1year,
+.option-moreThan2years,
+.option-yes,
+.option-no,
+.option-automobile,
+.option-bikePedestrian,
+.option-truck,
+.option-motorcycle,
+.option-fallSlip,
+.option-other,
+.option-none,
+.option-1-3,
+.option-4-6,
+.option-moreThan6,
+.option-softTissue,
+.option-brokenBones,
+.option-headInjuries {
+  background-color: #f6e4d0;
+}

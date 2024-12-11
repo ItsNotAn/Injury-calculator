@@ -1,0 +1,412 @@
+/* Container for the whole calculator */
+.container {
+  background-color: #fffcfb;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: flex-start;
+  box-sizing: border-box;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Content inside the calculator */
+.content {
+  width: 100%;
+  max-width: 1350px;
+  background-color: #fffcfb;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  justify-content: flex-start;
+  color: #54504d;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.logoFrame {
+  margin-right: 15px;
+}
+
+.logoImage {
+  width: 100px;
+  height: 100px;
+}
+
+.calculatorTitle {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Row containing the progress bar and estimated compensation */
+.progressCompensationRow {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #f6e4d0, #fdf4ee 80%);
+  border: 2px solid #ffbd38;
+}
+
+.progressContainer {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem;
+  margin-left: 2rem;
+}
+
+.compensationText {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-left: 0.1rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compensationText strong {
+  font-size: 2rem;
+  color: #4caf50;
+}
+
+/* Footer at the bottom of the page */
+.footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Styles for the circular progress bar */
+.circularProgressBar {
+  transform: rotate(-90deg);
+}
+
+.backgroundCircle {
+  stroke: #e6e6e6;
+}
+
+.filledCircle {
+  stroke: #4caf50;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.percentageText {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+/* Styles for progress labels */
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.progressLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.progressLabel.completed {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.progressContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* Circular Progress Bar */
+.progressBar {
+  background-color: #4486d8;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.progressLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.progressLabel.completed {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Circular Progress Bar */
+.progressBarContainer {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circularProgressBar {
+  transform: rotate(-90deg);
+}
+
+.backgroundCircle {
+  stroke: #a8c7d4;
+}
+
+.filledCircle {
+  stroke: #1976d2;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.percentageText {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f6e4d0, #fff);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: #4caf50;
+  margin-bottom: 1rem;
+  margin-top: 0.1rem;
+  letter-spacing: 0.5px;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  width: 95%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.buttonGroup {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.submitButton:hover {
+  transform: scale(1.05);
+  background-color: #43a047;
+  transition: all 0.3s ease;
+}
+
+.submitButton:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+select.input {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Ending Page */
+.endingPage {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.thankYouMessage {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.finalMessage {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.finalCompensation {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.callMessage {
+  font-size: 1.25rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .content {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .calculatorTitle {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .progressCompensationRow {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .progressContainer {
+    width: 90%;
+    margin: 0 auto 1rem;
+  }
+
+  .compensationText {
+    font-size: 1rem;
+  }
+
+  .form {
+    padding: 1rem;
+  }
+
+  .formTitle {
+    font-size: 1.5rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .calculatorTitle {
+    font-size: 20px;
+  }
+
+  .progressCompensationRow {
+    padding: 8px;
+  }
+
+  .compensationText {
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .form {
+    padding: 0.5rem;
+  }
+
+  .formTitle {
+    font-size: 1.2rem;
+  }
+
+  .input {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+  }
+}
