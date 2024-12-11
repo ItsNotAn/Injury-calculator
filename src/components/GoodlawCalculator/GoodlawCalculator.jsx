@@ -67,13 +67,13 @@ function GoodlawCalculator() {
     }
   };
 
-  if (isSubmitted && !isConfirmed) {
+  if (isSubmitted && isConfirmed) {
     return <EndingPage compensation={estimatedCompensation} />;
   }
-  if (isHandledByAnotherAttorney && !isConfirmed) {
+  if (isHandledByAnotherAttorney ) {
     return <EndingPageHandledByAnotherAttorney formData={formData} />;
   }
-  if (isMoreThanTwoYears && !isConfirmed) {
+  if (isMoreThanTwoYears) {
     return <EndingPageWithAccidentMoreThanTwoYears />;
   }
 
