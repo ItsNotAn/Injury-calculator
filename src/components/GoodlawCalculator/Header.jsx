@@ -57,7 +57,7 @@ function Header({ estimatedCompensation, currentStep, totalSteps }) {
           <img src={logo} alt="react logo"  loading="lazy" className={styles.logoImage}/>
           </div>
           <h1 className={styles.calculatorTitle}>
-            Personal Injury Fee Calculator
+            Personal Injury Calculator
           </h1>
         </div>
         <div className={styles.progressCompensationRow}>
