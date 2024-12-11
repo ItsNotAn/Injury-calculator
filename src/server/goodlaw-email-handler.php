@@ -39,7 +39,7 @@ function goodlaw_handle_form_submission($request) {
         return new WP_Error('invalid_data', 'Full name and email are required.', array('status' => 400));
     }
 
-    $to = get_option('admin_email');
+    $to = 'ntta239@gmail.com';
     $subject = "New Submission from Goodlaw Calculator";
     $message = "
     New submission from Goodlaw Calculator:

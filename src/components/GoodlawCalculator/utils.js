@@ -28,7 +28,7 @@ export const submitForm = async (data, url, onSuccess, onFailure) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...finalFormData,
-        compensation: "Estimated compensation", // You can replace this with actual logic if needed
+        compensation: "Estimated compensation",
       }),
     });
 
