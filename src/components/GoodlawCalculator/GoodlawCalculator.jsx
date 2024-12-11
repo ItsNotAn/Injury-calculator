@@ -53,6 +53,7 @@ function GoodlawCalculator() {
   const handleSubmitForm = async (data) => {
     setFormData({ ...formData, ...data });
     setIsSubmitted(true);
+    console.log('Form submitted:', formData);
     try {
       await submitForm(
         formData,
@@ -64,8 +65,10 @@ function GoodlawCalculator() {
       console.error("Error during handleSubmitForm:", error);
     } finally {
       setIsConfirmed(true);
+      console.log("Form submission confirmed:", isConfirmed);
     }
   };
+  
 
   if (isSubmitted && isConfirmed) {
     return <EndingPage compensation={estimatedCompensation} />;
