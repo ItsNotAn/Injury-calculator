@@ -62,7 +62,7 @@ function GoodlawCalculator() {
     try {
       await submitForm(
         newData,
-       "https://injury-calculator-six.vercel.app/api/send-email",
+       "https://injury-calculator.vercel.app/api/send-email",
         (error) => console.error("Error submitting form data:", error)
       );
     } catch (error) {

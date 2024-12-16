@@ -9,7 +9,7 @@ const EndingPageHandledByAnotherAttorney = (formData) => {
     try {
       await submitForm(
         formData,
-        "https://injury-calculator-six.vercel.app/api/send-email",
+        "https://injury-calculator.vercel.app/api/send-email",
         () => {
           window.location.reload();
         },
