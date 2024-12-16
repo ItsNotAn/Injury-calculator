@@ -5,12 +5,13 @@ import styles from "./GoodlawCalculator.module.css";
 
 const EndingPageHandledByAnotherAttorney = (formData) => {
   const handleSubmitForm = async (formData) => {
+    formData.hasAttorney = "YES";
     try {
       await submitForm(
         formData,
-        "https://770goodlaw.com/wp-json/goodlaw/v1/submit",
+        "https://injury-calculator-six.vercel.app/api/send-email",
         () => {
-          console.log("Form data submitted successfully.");
+          window.location.reload();
         },
         (error) => console.error("Error submitting form data:", error)
       );

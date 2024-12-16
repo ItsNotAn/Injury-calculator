@@ -51,21 +51,22 @@ function GoodlawCalculator() {
   };
 
   const handleSubmitForm = async (data) => {
-    setFormData({ ...formData, ...data });
+    setFormData((prevData) => {
+      const updatedData = { ...prevData, ...data };
+      return updatedData;
+    });
+
     setIsSubmitted(true);
-    console.log('Form submitted:', formData);
+    setIsConfirmed(true);
+    const newData = {...data, ...formData};
     try {
       await submitForm(
-        formData,
-        "https://770goodlaw.com/wp-json/goodlaw/v1/submit",
-        () => console.log("Form data submitted successfully."),
+        newData,
+       "https://injury-calculator-six.vercel.app/api/send-email",
         (error) => console.error("Error submitting form data:", error)
       );
     } catch (error) {
       console.error("Error during handleSubmitForm:", error);
-    } finally {
-      setIsConfirmed(true);
-      console.log("Form submission confirmed:", isConfirmed);
     }
   };
   

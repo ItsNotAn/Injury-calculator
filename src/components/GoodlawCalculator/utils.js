@@ -19,29 +19,21 @@ export function isFormComplete(formData) {
   return requiredFields.every((field) => formData[field]);
 }
 
-export const submitForm = async (data, url, onSuccess, onFailure) => {
-  const finalFormData = { ...data };
-
+export const submitForm = async (data, onSuccess, onFailure) => {
   try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        ...finalFormData,
-        compensation: "Estimated compensation",
-      }),
+    const response = await fetch('https://injury-calculator-six.vercel.app/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formData: data }),
     });
 
     if (response.ok) {
-      console.log("Form submitted successfully:", finalFormData);
-      if (onSuccess) onSuccess(finalFormData);
+      if (onSuccess) onSuccess();
     } else {
       const errorData = await response.json();
-      console.error("Failed to submit form:", errorData);
       if (onFailure) onFailure(errorData);
     }
   } catch (error) {
-    console.error("An error occurred during form submission:", error);
     if (onFailure) onFailure(error);
   }
 };
