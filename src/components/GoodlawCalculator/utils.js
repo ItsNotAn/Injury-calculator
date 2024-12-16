@@ -21,16 +21,25 @@ export function isFormComplete(formData) {
 
 export const submitForm = async (data, onSuccess, onFailure) => {
   try {
-    const response = await fetch('https://injury-calculator.vercel.app/api/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ formData: data }),
-    });
+    const response = await fetch(
+      "https://injury-calculator.vercel.app/api/send-email",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formData: data }),
+      }
+    );
 
     if (response.ok) {
       if (onSuccess) onSuccess();
     } else {
-      const errorData = await response.json();
+      let errorData;
+      try {
+        errorData = await response.json();
+      } catch (error) {
+        errorData = { error: "Unknown error occurred" };
+      }
+
       if (onFailure) onFailure(errorData);
     }
   } catch (error) {
