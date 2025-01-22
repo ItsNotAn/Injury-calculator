@@ -58,6 +58,12 @@ function GoodlawCalculator() {
 
     setIsSubmitted(true);
     setIsConfirmed(true);
+
+    // Call uet_report_conversion after setting submission state
+    if (typeof window.uet_report_conversion === "function") {
+      window.uet_report_conversion();
+    }
+    
     const newData = {...data, ...formData};
     try {
       await submitForm(
