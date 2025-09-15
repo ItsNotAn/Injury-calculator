@@ -294,7 +294,89 @@ select.input {
   display: block;
 }
 
-/* Ending Page */
+/* Radio Button Styles */
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.radioLabel:hover {
+  border-color: #ffbd38;
+  background-color: #fff9f0;
+}
+
+.radioInput {
+  margin-right: 0.75rem;
+  width: 18px;
+  height: 18px;
+  accent-color: #ffbd38;
+}
+
+.radioText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Error and Help Text Styles */
+.errorMessage {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.helpText {
+  color: #666;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.inputError {
+  border-color: #d32f2f !important;
+  background-color: #fff5f5;
+}
+
+/* Textarea Styles */
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #ffbd38;
+  box-shadow: 0 0 0 3px rgba(255, 189, 56, 0.1);
+}
+
+.textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Ending Page Styles */
 .endingPage {
   text-align: center;
   padding: 2rem;

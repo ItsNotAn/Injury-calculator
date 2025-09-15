@@ -19,6 +19,8 @@ export default async function handler(req, res) {
       medicalVisits,
       hasAttorney,
       injurySeverity,
+      accidentDetails,
+      accidentInUS,
     } = formData;
 
     const transporter = nodemailer.createTransport({
@@ -41,12 +43,14 @@ export default async function handler(req, res) {
         <p><strong>Phone Number:</strong> ${phoneNumber}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>State:</strong> ${state}</p>
+        <p><strong>Accident in US:</strong> ${accidentInUS === 'yes' ? 'Yes' : 'No'}</p>
         <p><strong>Accident Timing:</strong> ${accidentTiming}</p>
         <p><strong>Fault:</strong> ${fault}</p>
         <p><strong>Injury Type:</strong> ${injuryType}</p>
         <p><strong>Medical Visits:</strong> ${medicalVisits}</p>
         <p><strong>Has Attorney:</strong> ${hasAttorney}</p>
         <p><strong>Injury Severity:</strong> ${injurySeverity}</p>
+        <p><strong>Accident Details:</strong> ${accidentDetails || 'Not provided'}</p>
       `,
     };
 

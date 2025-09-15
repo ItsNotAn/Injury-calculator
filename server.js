@@ -26,6 +26,9 @@ app.post('/send-email', async (req, res) => {
     return res.status(400).json({ error: 'Form data is missing' });
   }
 
+  // Debug: Log the received data
+  console.log('Received form data:', JSON.stringify(formData, null, 2));
+
   const {
     fullName,
     phoneNumber,
@@ -37,31 +40,41 @@ app.post('/send-email', async (req, res) => {
     medicalVisits,
     hasAttorney,
     injurySeverity,
+    accidentDetails,
+    accidentInUS,
   } = formData;
 
   const mailOptions = {
     from: '"Goodlaw Calculator" <n@770goodlaw.com>',
     to: 'n@770goodlaw.com', 
-    subject: `New Form Submission from ${fullName}`,
+    subject: `NEW TEMPLATE TEST - Form Submission from ${fullName}`,
     html: `
-      <h1>New Contact Form Submission</h1>
+      <h1>NEW TEMPLATE TEST - Contact Form Submission</h1>
       <p><strong>Full Name:</strong> ${fullName}</p>
       <p><strong>Phone Number:</strong> ${phoneNumber}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>State:</strong> ${state}</p>
+      <p><strong>Accident in US:</strong> ${accidentInUS === 'yes' ? 'Yes' : 'No'}</p>
       <p><strong>Accident Timing:</strong> ${accidentTiming}</p>
       <p><strong>Fault:</strong> ${fault}</p>
       <p><strong>Injury Type:</strong> ${injuryType}</p>
       <p><strong>Medical Visits:</strong> ${medicalVisits}</p>
       <p><strong>Has Attorney:</strong> ${hasAttorney}</p>
       <p><strong>Injury Severity:</strong> ${injurySeverity}</p>
+      <p><strong>Accident Details:</strong> ${accidentDetails || 'Not provided'}</p>
+      <hr>
+      <p><em>This is a test email to verify the new template is working correctly.</em></p>
     `,
   };
+
+  // Debug: Log the email content
+  console.log('Email HTML content:', mailOptions.html);
 
   try {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
+    console.error('Email error:', error);
     res.status(500).json({ error: 'Error sending email' });
   }
 });

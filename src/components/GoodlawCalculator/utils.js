@@ -4,34 +4,34 @@ export function getProgressPercentage(currentStep, totalSteps) {
 
 export function isFormComplete(formData) {
   const requiredFields = [
+    "hasExistingCase",
     "accidentTiming",
     "fault",
     "injuryType",
     "medicalVisits",
     "hasAttorney",
     "injurySeverity",
+    "accidentDetails",
     "fullName",
     "phoneNumber",
     "email",
     "state",
+    "accidentInUS",
   ];
 
   return requiredFields.every((field) => formData[field]);
 }
 
-export const submitForm = async (data, onSuccess, onFailure) => {
+export const submitForm = async (data, endpoint, onFailure) => {
   try {
-    const response = await fetch(
-      "https://injury-calculator.vercel.app/api/send-email",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formData: data }),
-      }
-    );
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ formData: data }),
+    });
 
     if (response.ok) {
-      if (onSuccess) onSuccess();
+      console.log("Form submitted successfully");
     } else {
       let errorData;
       try {

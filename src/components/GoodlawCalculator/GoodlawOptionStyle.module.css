@@ -171,6 +171,123 @@
   }
 }
 
+/* Input Styles */
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 12px;
+  color: #666;
+  z-index: 1;
+}
+
+.textInput {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #ffbd38;
+  box-shadow: 0 0 0 3px rgba(255, 189, 56, 0.1);
+}
+
+.textInput::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.inputError {
+  border-color: #d32f2f !important;
+  background-color: #fff5f5;
+}
+
+/* Option Row for US Residency */
+.optionRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.optionRow .option {
+  flex: 1;
+  height: 60px;
+  font-size: 0.9rem;
+}
+
+/* Error and Help Text */
+.errorMessage {
+  color: #d32f2f;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.helpText {
+  color: #666;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+/* Button Styles */
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submitButton {
+  background-color: #ffbd38;
+  color: #333;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #e6a800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Option Background Colors */
 .option-within1week,
 .option-1-3months,
 .option-4-6months,
